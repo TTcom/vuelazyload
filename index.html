@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>懒加载选项设置</title>
+    
+</head>
+<body>
+<div id="main">
+	<div style="height: 500px;border: 2px solid red;">
+介绍
+Vue.js 是什么
+Vue (读音 /vjuː/，类似于 view) 是一套用于构建用户界面的渐进式框架。与其它大型框架不同的是，Vue 被设计为可以自底向上逐层应用。Vue 的核心库只关注视图层，不仅易于上手，还便于与第三方库或既有项目整合。另一方面，当与现代化的工具链以及各种支持类库结合使用时，Vue 也完全能够为复杂的单页应用提供驱动。
+
+如果你想在深入学习 Vue 之前对它有更多了解，我们制作了一个视频，带您了解其核心概念和一个示例工程。
+
+如果你已经是有经验的前端开发者，想知道 Vue 与其它库/框架有哪些区别，请查看对比其它框架。
+官方指南假设你已了解关于 HTML、CSS 和 JavaScript 的中级知识。如果你刚开始学习前端开发，将框架作为你的第一步可能不是最好的主意——掌握好基础知识再来吧！之前有其它框架的使用经验会有帮助，但这不是必需的。
+
+
+
+	</div>
+            <ul id="container">
+                <li v-for="img in list">
+                    <img v-lazy="img">
+                </li>
+            </ul>
+        </div>
+<script src="vue.js"></script>
+<script src="https://unpkg.com/vue-lazyload/vue-lazyload.js"></script>
+
+</body>
+</html>
+<script>
+	Vue.use(VueLazyload, {
+      preLoad: 1.1,
+      error: 'http://a0.att.hudong.com/77/31/20300542906611142174319458811.jpg',
+      loading: 'http://img.zcool.cn/community/0161f656b0663e6ac7256cb052d31a.gif',
+      attempt: 1
+    })
+
+new Vue({
+    el: '#main',
+    data: {
+        list: [
+            'pic/1.jpg',
+            'pic/2.jpg',
+            'pic/3.jpg',
+            'pic/4.jpg',
+            'pic/5.jpg',
+            'pic/6.jpg',
+            'pic/7.jpg',
+            'pic/8.jpg',
+            'pic/9.jpg',
+            'pic/10.jpg',
+            'pic/11.jpg',
+            'pic/12.jpg',
+            'pic/13.jpg',
+            'pic/14.jpg',
+            'pic/15.jpg',
+            'pic/16.jpg',
+            'pic/17.jpg',
+            'pic/18.jpg',
+            'pic/19.jpg'
+        ]
+    }
+})
+
+	
+</script>
